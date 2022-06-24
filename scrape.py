@@ -2,6 +2,7 @@ import os
 from zipfile import ZipFile
 from datetime import date
 
+
 def scrape_HC():
     """
     This function is used to scrape property data from HC
@@ -72,3 +73,13 @@ def scrape_WC():
     os.system(f"mv ./{file_name} ./data/{export_name}")
     
     print("Scrape Complete")
+
+if __name__ == "__main__":
+    print("Scraping HC ...")
+    scrape_HC()
+
+    print("Scraping JC ...")
+    scrape_JC()
+
+    print("Scraping WC ...")
+    scrape_WC()
