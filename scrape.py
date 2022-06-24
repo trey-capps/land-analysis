@@ -25,7 +25,7 @@ def scrape_HC():
     
     #Rename dataset to specify day of collect
     export_name = f"{date.today()}_HC_raw.dbf"
-    os.system(f"mv ./{filename} ./data/{export_name}")
+    os.system(f"mv ./{file_name} ./data/{export_name}")
     
     print("Scrape Complete")
 
@@ -52,7 +52,7 @@ def scrape_JC():
     
     #Rename dataset to specify day of collect
     export_name = f"{date.today()}_JC_raw.xlsx"
-    os.system(f"mv ./{filename} ./data/{export_name}")
+    os.system(f"mv ./{file_name} ./data/{export_name}")
     
     print("Scrape Complete")
 
@@ -64,9 +64,11 @@ def scrape_WC():
     data_url = "https://services.wakegov.com/realdata_extracts/RealEstData06232022.txt"
     os.system(f"wget {data_url}")
     print(f"Extracted data from: {data_url}")
+
+    file_name = data_url.rsplit('/', 1)[1]
     
     #Rename dataset to specify day of collect
     export_name = f"{date.today()}_HC_raw.txt"
-    os.system(f"mv ./{filename} ./data/{export_name}")
+    os.system(f"mv ./{file_name} ./data/{export_name}")
     
     print("Scrape Complete")
