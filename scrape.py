@@ -49,7 +49,7 @@ def scrape_JC():
         
     #Remove original zip file from dir
     print("Removing zip file from dir")
-    os.system(f"mv ./{zip_name}")
+    os.system(f"rm ./{zip_name}")
     
     #Rename dataset to specify day of collect
     export_name = f"{date.today()}_JC_raw.xlsx"
@@ -62,7 +62,7 @@ def scrape_WC():
     This function is used to scrape property data from WC
     """
     #Get data from website and save to current dir
-    data_url = "https://services.wakegov.com/realdata_extracts/RealEstData06232022.txt"
+    data_url = "https://services.wakegov.com/realdata_extracts/RealEstData06242022.txt"
     os.system(f"wget {data_url}")
     print(f"Extracted data from: {data_url}")
 

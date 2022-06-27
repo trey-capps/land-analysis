@@ -1,3 +1,4 @@
 credentials.json
 .ipynb_checkpoints
-.env
+env/
+data/
