@@ -12,6 +12,7 @@ with open("./credentials.json", "r") as cred:
         SECRET_KEY = credentials["secretAccessKey"]
 
 def create_boto_session():
+    """Create boto3 session to access AWS services"""
     #Create Session
     try:
         session = boto3.Session(
@@ -22,6 +23,7 @@ def create_boto_session():
         print(f"Unable to connect to AWS with boto3, error: {e}")
 
 def connect_to_s3(session):
+    """Connect to S3 using boto3"""
     try:
         conn = session.resource("s3")
         return conn
@@ -29,6 +31,7 @@ def connect_to_s3(session):
         print(f"Unable to connect to s3, error: {e}")
 
 def upload_to_bucket(conn, file_name):
+    """Upload file from 'data' directory to S3"""
     bucket = conn.Bucket(BUCKET_NAME)
     bucket.meta.client.upload_file(
         Filename = "./data/" + file_name,
@@ -37,6 +40,7 @@ def upload_to_bucket(conn, file_name):
     print(f"Successfully uploaded {file_name} to {BUCKET_NAME}")
 
 def remove_data_from_temp(file_name):
+    """Remove the uploaded folder from 'data' directory"""
     print(f"Removing {file_name} from ./data/")
     os.system(f"rm ./data/{file_name}")
 
