@@ -1,4 +1,6 @@
 credentials.json
 .ipynb_checkpoints
-env/
 data/
+venv/
+.DS_Store
+*/__pycache__

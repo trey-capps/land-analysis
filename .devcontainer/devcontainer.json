@@ -1,0 +1,15 @@
+{
+  "name": "Python Dev Container",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "python-dev",
+  "workspaceFolder": "/workspace",
+  "forwardPorts": [
+    8000,  
+    8080,  
+    5432   
+  ],
+  //"postCreateCommand": "pip install -r /workspace/requirements.txt",
+  "remoteEnv": {
+    "PYTHONPATH": "/workspace"
+  }
+}

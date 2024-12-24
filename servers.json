@@ -1,0 +1,24 @@
+{
+    "Servers": {
+      "1": {
+        "Name": "Postgres Airflow",
+        "Group": "Servers",
+        "Host": "postgres-airflow",
+        "Port": 5432,
+        "Username": "airflow",
+        "Password": "airflow",
+        "MaintenanceDB": "airflow",
+        "SSLMode": "prefer"
+      },
+      "2": {
+        "Name": "Postgres Analytics",
+        "Group": "Servers",
+        "Host": "postgres-analytics",
+        "Port": 5432,
+        "Username": "analytics",
+        "Password": "analytics",
+        "MaintenanceDB": "real_estate_analysis",
+        "SSLMode": "prefer"
+      }
+    }
+  }
